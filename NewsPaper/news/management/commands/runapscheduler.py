@@ -25,7 +25,6 @@ def my_job():
         category_sub = []
         posts_for_send = []
         user_email = User.objects.filter(id=user).values_list('email', flat=True)
-        print(user_email)
         for category in Subscription.objects.filter(user=user).values_list('category', flat=True):
             category_sub.append(category)
         for post in posts_apscheduler:
